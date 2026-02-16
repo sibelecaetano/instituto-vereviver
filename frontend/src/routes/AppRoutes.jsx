@@ -8,8 +8,14 @@ export default function AppRoutes() {
     <BrowserRouter>
       <Layout>
         <Routes>
+<<<<<<< Lima-Front
           <Route path="/" element={<Home />} />
           <Route path="/admin" element={<Admin />} />
+=======
+            <Route element={<Layout />}>
+              <Route path="/" element={<Home />} />
+            </Route>
+>>>>>>> main
         </Routes>
       </Layout>
     </BrowserRouter>

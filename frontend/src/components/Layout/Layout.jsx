@@ -1,13 +1,16 @@
-export default function Layout({ children }) {
+import { Outlet } from "react-router-dom";
+import styles from "./Layout.module.css";
+
+export default function Layout() {
   return (
-    <>
-      <header style={{ padding: "1rem", background: "#111", color: "#fff" }}>
+    <div className={styles.wrapper}>
+      <header className={styles.header}>
         <h2>Client Landing System</h2>
       </header>
 
-      <main style={{ padding: "2rem" }}>
-        {children}
+      <main className={styles.main}>
+        <Outlet />
       </main>
-    </>
+    </div>
   );
 }
