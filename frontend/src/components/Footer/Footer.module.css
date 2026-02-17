@@ -1,0 +1,211 @@
+.footer {
+  background: #0a1929;
+  color: #e2e8f0;
+  padding: 60px 0 0;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.columnsWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 60px;
+  padding-bottom: 50px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Coluna 1: Logo/Bio */
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.heartIcon {
+  color: #2dd4bf;
+  fill: #2dd4bf;
+}
+
+.logoTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.bioText {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #94a3b8;
+  margin: 0;
+  max-width: 300px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(45, 212, 191, 0.1);
+  border-radius: 50%;
+  color: #2dd4bf;
+  transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+  background: #2dd4bf;
+  color: #0a1929;
+  transform: translateY(-3px);
+}
+
+/* Coluna 2: Contato */
+.columnTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.contactIcon {
+  color: #2dd4bf;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Coluna 3: Links Rápidos */
+.linksList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.link {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-left: 0;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  color: #2dd4bf;
+  padding-left: 8px;
+}
+
+/* Rodapé Inferior */
+.bottomBar {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 24px 0;
+}
+
+.copyright {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.copyright p {
+  margin: 0;
+}
+
+.developedText {
+  margin-top: 8px !important;
+  color: #64748b;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .columnsWrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  
+  .column:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .columnsWrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .column:last-child {
+    grid-column: span 1;
+  }
+  
+  .bioText {
+    max-width: 100%;
+  }
+  
+  .logoSection {
+    justify-content: center;
+  }
+  
+  .contactItem {
+    justify-content: center;
+  }
+  
+  .linksList {
+    align-items: center;
+  }
+  
+  .link:hover {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 40px 0 0;
+  }
+  
+  .columnTitle {
+    font-size: 1.1rem;
+  }
+  
+  .bioText,
+  .contactItem,
+  .link {
+    font-size: 0.875rem;
+  }
+}
