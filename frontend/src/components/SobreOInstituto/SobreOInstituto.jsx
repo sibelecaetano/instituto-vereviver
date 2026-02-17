@@ -13,7 +13,6 @@ const SobreOInstituto = () => {
   return (
     <section className={styles.container}>
       <div className={styles.contentWrapper}>
-        {/* Top Section: Image + Text */}
         <div className={styles.topSection}>
           <div className={styles.imageContainer}>
             <img 
@@ -40,7 +39,6 @@ const SobreOInstituto = () => {
           </div>
         </div>
 
-        {/* Statistics Section */}
         <div className={styles.statsSection}>
           <div className={styles.statsGrid}>
             {statistics.map((stat, index) => (
