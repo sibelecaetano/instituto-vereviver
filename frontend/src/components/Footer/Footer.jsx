@@ -56,7 +56,7 @@ const Footer = () => {
               <li><a href="/projetos" className={styles.link}>Nossos Projetos</a></li>
               <li><a href="/galeria" className={styles.link}>Galeria</a></li>
               <li><a href="/contato" className={styles.link}>Contato</a></li>
-              <li><a href="/PainelAdm" className={styles.link}>Painel de Administrativo</a></li>
+<li><a href="/login" className={styles.link}>Painel Administrativo</a></li>
             </ul>
           </div>
         </div>
