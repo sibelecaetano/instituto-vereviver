@@ -1,1 +1,205 @@
-/* Contato Module - CSS Modules */
+.container {
+  width: 100%;
+  padding: 80px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0a1929;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+}
+
+.titleBar {
+  width: 60px;
+  height: 4px;
+  background-color: #0d9488;
+  margin: 0 auto 24px;
+}
+
+.subtitle {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 700;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background-color: #0f2744;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.iconWrapper {
+  background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
+}
+
+.cardTitle {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cardText {
+  color: #9ca3af;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.whatsappBanner {
+  background: linear-gradient(135deg, #02723c 0%, #14b8a6 100%);
+  border-radius: 16px;
+  padding: 48px 24px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.whatsappContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.whatsappTitle {
+  color: #ffffff;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.whatsappText {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin: 0;
+}
+
+.whatsappButton {
+  background-color: #ffffff;
+  color: #02723c;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsappButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.whatsappIcon {
+  color: #02723c;
+}
+
+.socialSection {
+  text-align: center;
+}
+
+.socialTitle {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 24px 0;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.socialIcon {
+  background-color: #0f2744;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.socialIcon:hover {
+  background-color: #0d9488;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 1024px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 60px 0;
+  }
+
+  .contentWrapper {
+    padding: 0 16px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .whatsappTitle {
+    font-size: 1.5rem;
+  }
+}
