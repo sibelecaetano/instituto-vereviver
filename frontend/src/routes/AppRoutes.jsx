@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
-import Admin from "../pages/Admin";
+import PainelAdm from "../pages/PainelAdm";
 import Layout from "../components/Layout/Layout";
 
 export default function AppRoutes() {
@@ -9,7 +9,7 @@ export default function AppRoutes() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin" element={<PainelAdm />} />
         </Routes>
       </Layout>
     </BrowserRouter>
