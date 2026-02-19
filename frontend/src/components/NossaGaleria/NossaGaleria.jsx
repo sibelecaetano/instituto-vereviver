@@ -1,12 +1,29 @@
 // Responsável: SC
-import React from 'react';
+import styles from "./NossaGaleria.module.css";
 
-const NossaGaleria = () => {
+export default function NossaGaleria() {
   return (
-    <div>
-      <h1>Nossa Galeria</h1>
-    </div>
-  );
-};
+    <section className={styles.section}>
+      <div className={styles.container}>
 
-export default NossaGaleria;
+        <div className={styles.header}>
+          <h2>Galeria de Fotos</h2>
+          <div className={styles.divider}></div>
+          <p>
+            Momentos que refletem nosso compromisso com a transformação social.
+          </p>
+        </div>
+
+        <div className={styles.grid}>
+          <img src="URL1" alt="" />
+          <img src="URL2" alt="" />
+          <img src="URL3" alt="" />
+          <img src="URL4" alt="" />
+          <img src="URL5" alt="" />
+          <img src="URL6" alt="" />
+        </div>
+
+      </div>
+    </section>
+  );
+}
