@@ -4,16 +4,19 @@ import styles from './SobreOInstituto.module.css';
 
 const SobreOInstituto = () => {
   const statistics = [
-    { icon: Users, number: '500+', label: 'Beneficiados' },
-    { icon: Heart, number: '150+', label: 'Voluntários' },
-    { icon: FolderOpen, number: '20+', label: 'Projetos' },
-    { icon: Calendar, number: '8', label: 'Anos' },
+    { icon: Users, number: '500+', label: 'Pessoas Beneficiadas' },
+    { icon: Heart, number: '150+', label: 'Voluntários Ativos' },
+    { icon: FolderOpen, number: '20+', label: 'Projetos Realizados' },
+    { icon: Calendar, number: '8', label: 'Anos de Atuação' },
   ];
 
   return (
     <section className={styles.container}>
       <div className={styles.contentWrapper}>
-        {/* Top Section: Image + Text */}
+        <div className={styles.titleSection}>
+          <h1 className={styles.title}>Sobre o Instituto</h1>
+        </div>
+        
         <div className={styles.topSection}>
           <div className={styles.imageContainer}>
             <img 
@@ -24,8 +27,7 @@ const SobreOInstituto = () => {
           </div>
           
           <div className={styles.textContainer}>
-            <p className={styles.subtitle}>Sobre Nós</p>
-            <h2 className={styles.title}>Instituto Social</h2>
+            <h2 className={styles.subtitle}>Transformando projetos em coisas reais</h2>
             <p className={styles.description}>
               O Instituto Social é uma organização sem fins lucrativos dedicada a transformar 
               vidas através de projetos sociais inovadores. Há mais de 8 anos, trabalhamos 
@@ -40,7 +42,6 @@ const SobreOInstituto = () => {
           </div>
         </div>
 
-        {/* Statistics Section */}
         <div className={styles.statsSection}>
           <div className={styles.statsGrid}>
             {statistics.map((stat, index) => (

@@ -12,7 +12,6 @@
   gap: 60px;
 }
 
-/* Top Section: Image + Text */
 .topSection {
   display: flex;
   flex-direction: row;
@@ -44,20 +43,32 @@
 }
 
 .subtitle {
-  color: #0d9488;
+  color: #000000;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 0;
 }
 
 .title {
-  color: #1a365d;
+  color: #000000;
   font-size: 2.75rem;
   font-weight: 700;
+  font-family: sans-serif;
+  text-align: center;
   margin: 0;
   line-height: 1.2;
+  width: 100%;
+}
+
+.title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 4px;
+  background-color: #0d9488;
+  margin: 12px auto 0;
 }
 
 .description {
@@ -67,7 +78,6 @@
   margin: 0;
 }
 
-/* Statistics Section */
 .statsSection {
   margin-top: 20px;
 }
@@ -97,7 +107,7 @@
 }
 
 .iconWrapper {
-  background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+  background: linear-gradient(135deg, #00642a 0%, #41b9ab 100%);
   width: 64px;
   height: 64px;
   border-radius: 50%;
@@ -122,7 +132,6 @@
   margin: 0;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .statsGrid {
     grid-template-columns: repeat(2, 1fr);
