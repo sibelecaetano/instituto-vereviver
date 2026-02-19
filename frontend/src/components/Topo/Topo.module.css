@@ -47,3 +47,19 @@
   font-weight: 600;
 }
 
+@media (max-width: 768px) {
+
+  .nav {
+    display: none;
+  }
+
+  .cta {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+}

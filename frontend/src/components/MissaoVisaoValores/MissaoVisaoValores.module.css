@@ -1,0 +1,108 @@
+.section {
+  padding: 120px 0;
+  background-color: #f1f5f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.header h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.divider {
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary);
+  margin: 0 auto 20px auto;
+  border-radius: 4px;
+}
+
+.header p {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  padding: 48px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ÍCONES */
+
+.icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+/* Cores */
+
+.missao {
+  background: linear-gradient(to bottom right, #10b981, #059669);
+}
+
+.visao {
+  background: linear-gradient(to bottom right, #3b82f6, #2563eb);
+}
+
+.valores {
+  background: linear-gradient(to bottom right, #a855f7, #ec4899);
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .header h2 {
+    font-size: 32px;
+  }
+}
