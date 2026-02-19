@@ -1,12 +1,25 @@
 // Responsável: SC
-import React from 'react';
+import styles from "./Topo.module.css";
 
-const Topo = () => {
+export default function Topo() {
   return (
-    <div>
-      <h1>Topo</h1>
-    </div>
-  );
-};
+    <header className={styles.header}>
+      <div className={styles.container}>
+        <div className={styles.logo}>
+          Instituto
+        </div>
 
-export default Topo;
+        <nav className={styles.nav}>
+          <a href="#sobre">Sobre</a>
+          <a href="#missao-visao-valores">Missão</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <button className={styles.cta}>
+          Apoie
+        </button>
+      </div>
+    </header>
+  );
+}
