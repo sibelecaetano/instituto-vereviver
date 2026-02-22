@@ -24,3 +24,12 @@ font-family: 'Inter', sans-serif;
 background-color: var(--background);
 color: var(--text);
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.section {
+  padding: 120px 0;
+}

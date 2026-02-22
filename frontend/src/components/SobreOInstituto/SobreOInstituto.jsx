@@ -11,10 +11,11 @@ const SobreOInstituto = () => {
   ];
 
   return (
-    <section className={styles.container}>
+    <section className={`section ${styles.section}`}>
+      <div className="container">
       <div className={styles.contentWrapper}>
         <div className={styles.titleSection}>
-          <h1 className={styles.title}>Sobre o Instituto</h1>
+          <h2 className={styles.title}>Sobre o Instituto</h2>
         </div>
         
         <div className={styles.topSection}>
@@ -55,6 +56,7 @@ const SobreOInstituto = () => {
             ))}
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
