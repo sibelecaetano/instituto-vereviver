@@ -1,13 +1,15 @@
 import { Outlet } from "react-router-dom";
 import Topo from "../Topo/Topo";
 import Footer from "../Footer/Footer";
-import styles from "./Layout.module.css";
+import useScrollReveal from "../../hooks/useScrollReveal";
 
 export default function Layout() {
+  useScrollReveal();
+
   return (
     <>
       <Topo />
-      <main className={styles.main}>
+      <main>
         <Outlet />
       </main>
       <Footer />
