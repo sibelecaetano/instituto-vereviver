@@ -2,29 +2,48 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Lock, Mail, ArrowLeft } from 'lucide-react';
 import styles from './Login.module.css';
+import { assertSupabase } from '../../lib/supabase';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Login sem precisar das credenciais, apenas pra mim poder acessar o painel. Preciso vim aq ajustar isso depois
-    console.log('Login realizado com sucesso!');
-    
-    navigate('/admin');
+    setError('');
+    setIsLoading(true);
+
+    try {
+      const supabase = assertSupabase();
+      const { error: signInError } = await supabase.auth.signInWithPassword({
+        email,
+        password
+      });
+
+      if (signInError) {
+        setError(signInError.message);
+        return;
+      }
+
+      navigate('/admin');
+    } catch (err) {
+      setError(err.message || 'Falha ao autenticar.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        
         <div className={styles.header}>
           <div className={styles.iconWrapper}>
             <Lock size={32} className={styles.lockIcon} />
           </div>
-          <h1 className={styles.title}>Área Administrativa</h1>
+          <h1 className={styles.title}>Area Administrativa</h1>
           <p className={styles.subtitle}>Acesse o painel de controle</p>
         </div>
 
@@ -41,6 +60,7 @@ const Login = () => {
                   placeholder="seu@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
               </div>
             </div>
@@ -53,20 +73,22 @@ const Login = () => {
                   type="password"
                   id="password"
                   className={styles.input}
-                  placeholder="••••••••"
+                  placeholder="********"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  required
                 />
               </div>
             </div>
 
-            <button type="submit" className={styles.button}>
-              Entrar
+            {error ? <p className={styles.subtitle}>{error}</p> : null}
+
+            <button type="submit" className={styles.button} disabled={isLoading}>
+              {isLoading ? 'Entrando...' : 'Entrar'}
             </button>
           </form>
         </div>
 
-        {/* Rodapé */}
         <div className={styles.footer}>
           <a href="/" className={styles.backLink}>
             <ArrowLeft size={18} />
