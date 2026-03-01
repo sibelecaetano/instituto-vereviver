@@ -1,29 +1,58 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { 
-  Mail, 
-  Users, 
-  Send, 
-  LogOut, 
+import {
+  Mail,
+  Users,
+  Send,
+  LogOut,
   ArrowRight,
   Trash2
 } from 'lucide-react';
 import styles from './PainelAdm.module.css';
+import { assertSupabase } from '../../lib/supabase';
 
 const PainelAdm = () => {
   const [activeTab, setActiveTab] = useState('enviar');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  const [checkingSession, setCheckingSession] = useState(true);
   const navigate = useNavigate();
-  
-  // Dados mockados - depois virão do backend
+
   const totalInscritos = 0;
   const ativos = 0;
   const emailsEnviados = 0;
 
+  useEffect(() => {
+    let mounted = true;
+
+    async function checkSession() {
+      try {
+        const supabase = assertSupabase();
+        const { data, error } = await supabase.auth.getSession();
+
+        if (error || !data.session) {
+          navigate('/login', { replace: true });
+          return;
+        }
+      } catch {
+        navigate('/login', { replace: true });
+        return;
+      } finally {
+        if (mounted) {
+          setCheckingSession(false);
+        }
+      }
+    }
+
+    checkSession();
+
+    return () => {
+      mounted = false;
+    };
+  }, [navigate]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // A lógica de envio vai ser aqui
     console.log('Enviando para:', totalInscritos, 'inscritos');
     console.log('Assunto:', subject);
     console.log('Mensagem:', message);
@@ -38,13 +67,21 @@ const PainelAdm = () => {
     navigate('/');
   };
 
-  const handleSair = () => {
-    navigate('/login');
+  const handleSair = async () => {
+    try {
+      const supabase = assertSupabase();
+      await supabase.auth.signOut();
+    } finally {
+      navigate('/login', { replace: true });
+    }
   };
+
+  if (checkingSession) {
+    return <div className={styles.container}>Carregando...</div>;
+  }
 
   return (
     <div className={styles.container}>
-      
       <header className={styles.header}>
         <div className={styles.headerLeft}>
           <div className={styles.headerIcon}>
@@ -55,16 +92,16 @@ const PainelAdm = () => {
             <p className={styles.headerSubtitle}>Gerenciar e-mails e inscritos</p>
           </div>
         </div>
-        
+
         <div className={styles.headerRight}>
-          <button 
+          <button
             className={styles.headerButton}
             onClick={handleVerSite}
           >
             <ArrowRight size={16} />
             Ver Site
           </button>
-          <button 
+          <button
             className={styles.headerButton}
             onClick={handleSair}
           >
@@ -107,13 +144,13 @@ const PainelAdm = () => {
       </div>
 
       <div className={styles.tabs}>
-        <button 
+        <button
           className={`${styles.tab} ${activeTab === 'enviar' ? styles.tabActive : ''}`}
           onClick={() => setActiveTab('enviar')}
         >
           Enviar E-mail
         </button>
-        <button 
+        <button
           className={`${styles.tab} ${activeTab === 'inscritos' ? styles.tabActive : ''}`}
           onClick={() => setActiveTab('inscritos')}
         >
@@ -123,8 +160,8 @@ const PainelAdm = () => {
 
       {activeTab === 'enviar' && (
         <div className={styles.formCard}>
-          <h2 className={styles.formTitle}>Compor Nova Atualização</h2>
-          
+          <h2 className={styles.formTitle}>Compor Nova Atualizacao</h2>
+
           <form onSubmit={handleSubmit}>
             <div className={styles.formGroup}>
               <label htmlFor="subject" className={styles.label}>
@@ -134,7 +171,7 @@ const PainelAdm = () => {
                 type="text"
                 id="subject"
                 className={styles.input}
-                placeholder="Ex: Novidades incríveis para você!"
+                placeholder="Ex: Novidades incriveis para voce!"
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
               />
@@ -142,7 +179,7 @@ const PainelAdm = () => {
 
             <div className={styles.formGroup}>
               <label htmlFor="message" className={styles.label}>
-                Conteúdo do E-mail
+                Conteudo do E-mail
               </label>
               <textarea
                 id="message"
@@ -155,7 +192,7 @@ const PainelAdm = () => {
             </div>
 
             <p className={styles.infoText}>
-              Esta mensagem será enviada para {totalInscritos} inscrito(s)
+              Esta mensagem sera enviada para {totalInscritos} inscrito(s)
             </p>
 
             <div className={styles.buttonGroup}>
@@ -163,8 +200,8 @@ const PainelAdm = () => {
                 <Send size={18} />
                 Enviar para Todos
               </button>
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className={styles.clearButton}
                 onClick={handleClear}
               >
