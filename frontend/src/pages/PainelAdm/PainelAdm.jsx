@@ -6,21 +6,47 @@ import {
   Send,
   LogOut,
   ArrowRight,
-  Trash2
+  Trash2,
+  Loader2
 } from 'lucide-react';
 import styles from './PainelAdm.module.css';
 import { assertSupabase } from '../../lib/supabase';
+import { sendNewsletterEmail } from '../../lib/resend';
 
 const PainelAdm = () => {
   const [activeTab, setActiveTab] = useState('enviar');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [checkingSession, setCheckingSession] = useState(true);
+  const [subscribers, setSubscribers] = useState([]);
+  const [totalInscritos, setTotalInscritos] = useState(0);
+  const [loadingSubscribers, setLoadingSubscribers] = useState(false);
+  const [sendingEmail, setSendingEmail] = useState(false);
+  const [emailStatus, setEmailStatus] = useState(null);
   const navigate = useNavigate();
 
-  const totalInscritos = 0;
   const ativos = 0;
   const emailsEnviados = 0;
+
+  const fetchSubscribers = async () => {
+    setLoadingSubscribers(true);
+    try {
+      const supabase = assertSupabase();
+      const { data, error } = await supabase
+        .from('newsletter_subscribers')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+      
+      setSubscribers(data || []);
+      setTotalInscritos(data?.length || 0);
+    } catch (err) {
+      console.error('Erro ao buscar assinantes:', err);
+    } finally {
+      setLoadingSubscribers(false);
+    }
+  };
 
   useEffect(() => {
     let mounted = true;
@@ -33,6 +59,16 @@ const PainelAdm = () => {
         if (error || !data.session) {
           navigate('/login', { replace: true });
           return;
+        }
+
+        const { data: subscribersData } = await supabase
+          .from('newsletter_subscribers')
+          .select('*')
+          .order('created_at', { ascending: false });
+
+        if (mounted) {
+          setSubscribers(subscribersData || []);
+          setTotalInscritos(subscribersData?.length || 0);
         }
       } catch {
         navigate('/login', { replace: true });
@@ -51,16 +87,40 @@ const PainelAdm = () => {
     };
   }, [navigate]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Enviando para:', totalInscritos, 'inscritos');
-    console.log('Assunto:', subject);
-    console.log('Mensagem:', message);
+    
+    if (!subject.trim() || !message.trim()) {
+      setEmailStatus({ type: 'error', message: 'Preencha o assunto e a mensagem.' });
+      return;
+    }
+
+    if (subscribers.length === 0) {
+      setEmailStatus({ type: 'error', message: 'Nenhum inscrito encontrado.' });
+      return;
+    }
+
+    setSendingEmail(true);
+    setEmailStatus(null);
+
+    try {
+      const emails = subscribers.map(sub => sub.email);
+      await sendNewsletterEmail(emails, subject, message);
+      setEmailStatus({ type: 'success', message: `E-mail enviado com sucesso para ${emails.length} destinatario(s)!` });
+      setSubject('');
+      setMessage('');
+    } catch (error) {
+      console.error('Erro ao enviar email:', error);
+      setEmailStatus({ type: 'error', message: 'Erro ao enviar e-mail. Tente novamente.' });
+    } finally {
+      setSendingEmail(false);
+    }
   };
 
   const handleClear = () => {
     setSubject('');
     setMessage('');
+    setEmailStatus(null);
   };
 
   const handleVerSite = () => {
@@ -152,7 +212,10 @@ const PainelAdm = () => {
         </button>
         <button
           className={`${styles.tab} ${activeTab === 'inscritos' ? styles.tabActive : ''}`}
-          onClick={() => setActiveTab('inscritos')}
+          onClick={() => {
+            setActiveTab('inscritos');
+            fetchSubscribers();
+          }}
         >
           Inscritos ({totalInscritos})
         </button>
@@ -161,6 +224,19 @@ const PainelAdm = () => {
       {activeTab === 'enviar' && (
         <div className={styles.formCard}>
           <h2 className={styles.formTitle}>Compor Nova Atualizacao</h2>
+
+          {emailStatus && (
+            <div style={{
+              padding: '12px 16px',
+              borderRadius: '8px',
+              marginBottom: '20px',
+              backgroundColor: emailStatus.type === 'success' ? '#dcfce7' : '#fee2e2',
+              color: emailStatus.type === 'success' ? '#166534' : '#991b1b',
+              border: `1px solid ${emailStatus.type === 'success' ? '#86efac' : '#fca5a5'}`
+            }}>
+              {emailStatus.message}
+            </div>
+          )}
 
           <form onSubmit={handleSubmit}>
             <div className={styles.formGroup}>
@@ -196,14 +272,28 @@ const PainelAdm = () => {
             </p>
 
             <div className={styles.buttonGroup}>
-              <button type="submit" className={styles.submitButton}>
-                <Send size={18} />
-                Enviar para Todos
+              <button 
+                type="submit" 
+                className={styles.submitButton}
+                disabled={sendingEmail}
+              >
+                {sendingEmail ? (
+                  <>
+                    <Loader2 size={18} className={styles.spin} />
+                    Enviando...
+                  </>
+                ) : (
+                  <>
+                    <Send size={18} />
+                    Enviar para Todos
+                  </>
+                )}
               </button>
               <button
                 type="button"
                 className={styles.clearButton}
                 onClick={handleClear}
+                disabled={sendingEmail}
               >
                 <Trash2 size={18} />
                 Limpar
@@ -215,10 +305,38 @@ const PainelAdm = () => {
 
       {activeTab === 'inscritos' && (
         <div className={styles.formCard}>
-          <div className={styles.emptyState}>
-            <Users size={48} className={styles.emptyIcon} />
-            <p>Nenhum inscrito encontrado.</p>
-          </div>
+          {loadingSubscribers ? (
+            <div className={styles.emptyState}>
+              <p>Carregando...</p>
+            </div>
+          ) : subscribers.length === 0 ? (
+            <div className={styles.emptyState}>
+              <Users size={48} className={styles.emptyIcon} />
+              <p>Nenhum inscrito encontrado.</p>
+            </div>
+          ) : (
+            <div>
+              <h2 className={styles.formTitle}>Lista de Inscritos ({subscribers.length})</h2>
+              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                <thead>
+                  <tr style={{ borderBottom: '1px solid #334155' }}>
+                    <th style={{ textAlign: 'left', padding: '12px', color: '#000000' }}>Email</th>
+                    <th style={{ textAlign: 'left', padding: '12px', color: '#000000' }}>Data de Cadastro</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {subscribers.map((sub) => (
+                    <tr key={sub.id} style={{ borderBottom: '1px solid #1e293b' }}>
+                      <td style={{ padding: '12px', color: '#000000' }}>{sub.email}</td>
+                      <td style={{ padding: '12px', color: '#000000' }}>
+                        {new Date(sub.created_at).toLocaleDateString('pt-BR')}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </div>
       )}
     </div>
