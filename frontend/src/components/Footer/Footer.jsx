@@ -1,6 +1,7 @@
 import React from 'react';
 import { Heart, MapPin, Phone, Mail, Facebook, Instagram, Youtube } from 'lucide-react';
 import styles from './Footer.module.css';
+import Cadastroemail from './Cadastroemail';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,6 +9,10 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
+        <div className={styles.newsletterSection}>
+          <Cadastroemail />
+        </div>
+
         <div className={styles.columnsWrapper}>
           <div className={styles.column}>
             <div className={styles.logoSection}>
@@ -56,7 +61,7 @@ const Footer = () => {
               <li><a href="/projetos" className={styles.link}>Nossos Projetos</a></li>
               <li><a href="/galeria" className={styles.link}>Galeria</a></li>
               <li><a href="/contato" className={styles.link}>Contato</a></li>
-<li><a href="/login" className={styles.link}>Painel Administrativo</a></li>
+              <li><a href="/login" className={styles.link}>Painel Administrativo</a></li>
             </ul>
           </div>
         </div>
