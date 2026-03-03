@@ -11,6 +11,10 @@
   padding: 0 20px;
 }
 
+.newsletterSection {
+  margin-bottom: 50px;
+}
+
 .columnsWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
