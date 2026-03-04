@@ -1,11 +1,11 @@
 import React from 'react';
-import { Phone, Mail, MapPin, MessageCircle, Instagram, Facebook, Linkedin, Youtube } from 'lucide-react';
+import { Phone, Mail, MessageCircle, Instagram } from 'lucide-react';
 import styles from './Contato.module.css';
 
 const Contato = () => {
   const handleWhatsAppClick = () => {
-    const phoneNumber = '5511999999999'; // Replace with your WhatsApp number
-    const message = 'Olá! Gostaria de mais informações sobre o instituto.'; // Default message
+    const phoneNumber = '5511999999999'; 
+    const message = 'Olá! Gostaria de mais informações sobre o instituto.'; 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
@@ -40,10 +40,17 @@ const Contato = () => {
 
           <div className={styles.card}>
             <div className={styles.iconWrapper}>
-              <MapPin size={24} />
+              <Instagram size={24} />
             </div>
-            <h3 className={styles.cardTitle}>Endereço</h3>
-            <p className={styles.cardText}>Rua Example, 123 - São Paulo, SP</p>
+            <h3 className={styles.cardTitle}>Instagram</h3>
+            <a 
+              href="https://www.instagram.com/instituto_vereviver" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={styles.link}
+            >
+              @instituto_vereviver
+            </a>
           </div>
         </div>
 
@@ -57,21 +64,6 @@ const Contato = () => {
               <MessageCircle size={20} className={styles.whatsappIcon} />
               Abrir WhatsApp
             </button>
-          </div>
-        </div>
-
-        <div className={styles.socialSection}>
-          <h3 className={styles.socialTitle}>Siga-nos nas Redes Sociais</h3>
-          <div className={styles.socialIcons}>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
-              <Instagram size={24} />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
-              <Linkedin size={24} />
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
-              <Facebook size={24} />
-            </a>
           </div>
         </div>
       </div>
