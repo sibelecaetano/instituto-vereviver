@@ -17,31 +17,16 @@ const Footer = () => {
           <div className={styles.column}>
             <div className={styles.logoSection}>
               <Heart className={styles.heartIcon} size={28} />
-              <h3 className={styles.logoTitle}>Instituto</h3>
+              <h3 className={styles.logoTitle}>Instituto Ver&Viver</h3>
             </div>
             <p className={styles.bioText}>
               Transformando vidas através da educação, cultura e desenvolvimento social.
             </p>
-            <div className={styles.socialIcons}>
-              <a href="#" className={styles.socialLink} aria-label="Facebook">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className={styles.socialLink} aria-label="Instagram">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className={styles.socialLink} aria-label="Youtube">
-                <Youtube size={20} />
-              </a>
-            </div>
           </div>
 
           <div className={styles.column}>
             <h3 className={styles.columnTitle}>Contato</h3>
             <div className={styles.contactList}>
-              <div className={styles.contactItem}>
-                <MapPin className={styles.contactIcon} size={18} />
-                <span>Rua Exemplo, 123 - São Paulo/SP</span>
-              </div>
               <div className={styles.contactItem}>
                 <Phone className={styles.contactIcon} size={18} />
                 <span>(11) 9999-9999</span>
@@ -68,8 +53,7 @@ const Footer = () => {
 
         <div className={styles.bottomBar}>
           <div className={styles.copyright}>
-            <p>© {currentYear} Instituto de Transformação Social</p>
-            <p className={styles.developedText}>Desenvolvido com ❤️ para fazer a diferença.</p>
+            <p>© {currentYear} Instituto Ver&Viver</p>
           </div>
         </div>
       </div>
