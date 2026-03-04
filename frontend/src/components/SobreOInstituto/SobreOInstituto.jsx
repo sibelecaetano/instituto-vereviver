@@ -1,6 +1,7 @@
 import React from 'react';
 import { Users, Heart, FolderOpen, Calendar } from 'lucide-react';
 import styles from './SobreOInstituto.module.css';
+import Logo from '../../assets/images/Logo.png';
 
 const SobreOInstituto = () => {
   const statistics = [
@@ -21,7 +22,7 @@ const SobreOInstituto = () => {
         <div className={styles.topSection}>
           <div className={styles.imageContainer}>
             <img 
-              src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              src={Logo} 
               alt="Instituto Social" 
               className={styles.image}
             />
