@@ -24,8 +24,7 @@ export default function MissaoVisaoValores() {
 
             <h3>Missão</h3>
             <p>
-              Promover a inclusão social e o desenvolvimento integral de crianças, jovens e famílias 
-              em situação de vulnerabilidade, através de ações educacionais, culturais e assistenciais.
+              Promover o acesso à saúde ocular de qualidade, levando exames, diagnósticos e orientação especializada às comunidades que mais precisam.
             </p>
           </div>
 
@@ -37,8 +36,7 @@ export default function MissaoVisaoValores() {
 
             <h3>Visão</h3>
             <p>
-              Ser referência nacional em projetos sociais transformadores, reconhecidos pela excelência 
-              no atendimento e impacto positivo na vida das comunidades.
+              Ser reconhecido como um projeto que transforma parcerias em cuidado humano, levando saúde visual e acolhimento com respeito e compromisso social.
             </p>
           </div>
 
@@ -50,8 +48,7 @@ export default function MissaoVisaoValores() {
 
             <h3>Valores</h3>
             <p>
-              Transparência, ética, respeito à dignidade humana, trabalho em equipe, inovação social, 
-              sustentabilidade e inclusão para todos.
+              Excelência, prevenção, transparência, ética, acessibilidade e compromisso social em todas as nossas ações.
             </p>
           </div>
 

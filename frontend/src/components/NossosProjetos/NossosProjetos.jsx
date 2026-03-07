@@ -16,12 +16,12 @@ export default function NossosProjetos() {
 
         <div className={styles.grid}>
 
-          {/* EDUCAÇÃO */}
+          {/* TRIAGEM VISUAL*/}
           <div className={styles.card}>
             <div className={styles.imageWrapper}>
               <img
-                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
-                alt="Educação"
+                src=" "
+                alt="Triagem Visual"
               />
             </div>
 
@@ -30,20 +30,20 @@ export default function NossosProjetos() {
                 <div className={styles.icon}>
                   <BookOpen size={20} />
                 </div>
-                <h3>Educação e Reforço Escolar</h3>
+                <h3>Triagem Visual</h3>
               </div>
               <p>
-                Aulas de reforço, alfabetização e preparação para o mercado de trabalho.
+                Avaliação inicial da visão para identificar possíveis dificuldades visuais na população atendida.
               </p>
             </div>
           </div>
 
-          {/* ARTE */}
+          {/* EXAMES*/}
           <div className={styles.card}>
             <div className={styles.imageWrapper}>
               <img
-                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
-                alt="Arte"
+                src=" "
+                alt="Exames"
               />
             </div>
 
@@ -52,42 +52,42 @@ export default function NossosProjetos() {
                 <div className={styles.icon}>
                   <Palette size={20} />
                 </div>
-                <h3>Arte e Cultura</h3>
+                <h3>Exames Oftalmológicos</h3>
               </div>
               <p>
-                Oficinas de música, dança e artes visuais que estimulam criatividade.
+                Realização de exames completos para diagnóstico de problemas de visão.
               </p>
             </div>
           </div>
 
-          {/* ESPORTE */}
+          {/* ORIENTAÇÃO */}
           <div className={styles.card}>
             <div className={styles.imageWrapper}>
               <img
-                src="https://images.unsplash.com/photo-1517649763962-0c623066013b"
-                alt="Esporte"
+                src=""
+                alt="Orientação"
               />
             </div>
 
             <div className={styles.content}>
               <div className={styles.titleRow}>
                 <div className={styles.icon}>
-                  <Bike size={20} />
+                  <Palette size={20} />
                 </div>
-                <h3>Esporte e Lazer</h3>
+                <h3>Orientação em Saúde Ocular</h3>
               </div>
               <p>
-                Atividades esportivas que promovem saúde, disciplina e inclusão social.
+                Educação e orientação sobre cuidados com a visão e prevenção de problemas oculares.
               </p>
             </div>
           </div>
 
-          {/* APOIO */}
+          {/* ACESSO */}
           <div className={styles.card}>
             <div className={styles.imageWrapper}>
               <img
-                src="https://images.unsplash.com/photo-1529336953121-ad5a0d43d0d2"
-                alt="Apoio às famílias"
+                src=""
+                alt="Acesso a Óculos"
               />
             </div>
 
@@ -96,10 +96,10 @@ export default function NossosProjetos() {
                 <div className={styles.icon}>
                   <Users size={20} />
                 </div>
-                <h3>Apoio às Famílias</h3>
+                <h3>Acesso a Óculos</h3>
               </div>
               <p>
-                Atendimento psicossocial e orientação para fortalecer vínculos familiares.
+                Facilitamos do acesso a óculos para pessoas que necessitam correção visual, promovendo inclusão e qualidade de vida.
               </p>
             </div>
           </div>
