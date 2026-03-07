@@ -1,31 +1,36 @@
 import React, { useState } from 'react';
+import { sendNewsletterEmail } from '../../lib/sendEmail';
 
 const EmailForm = () => {
-  const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus('Email enviado com sucesso!');
-    setEmail('');
-    setSubject('');
-    setMessage('');
+    setLoading(true);
+    setStatus('');
+
+    try {
+      const result = await sendNewsletterEmail(subject, message);
+      setStatus(`Email enviado para ${result.successful} de ${result.total} inscritos!`);
+      setSubject('');
+      setMessage('');
+    } catch (error) {
+      setStatus('Erro: ' + error.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
-      <h2>Enviar Email</h2>
+      <h2>Enviar Newsletter</h2>
+      <p style={{ marginBottom: '20px', color: '#666' }}>
+        Esta mensagem será enviada para todos os emails cadastrados na newsletter.
+      </p>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-        <input
-          type="email"
-          placeholder="Destinatário"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
-        />
         <input
           type="text"
           placeholder="Assunto"
@@ -44,22 +49,28 @@ const EmailForm = () => {
         />
         <button
           type="submit"
+          disabled={loading}
           style={{
             padding: '12px',
-            backgroundColor: '#0d9488',
+            backgroundColor: loading ? '#999' : '#0d9488',
             color: 'white',
             border: 'none',
             borderRadius: '5px',
-            cursor: 'pointer',
+            cursor: loading ? 'not-allowed' : 'pointer',
             fontWeight: 'bold'
           }}
         >
-          Enviar Email
+          {loading ? 'Enviando...' : 'Enviar para Todos os Inscritos'}
         </button>
-        {status && <p style={{ color: 'green' }}>{status}</p>}
+        {status && (
+          <p style={{ color: status.includes('Erro') ? 'red' : 'green' }}>
+            {status}
+          </p>
+        )}
       </form>
     </div>
   );
 };
 
 export default EmailForm;
+

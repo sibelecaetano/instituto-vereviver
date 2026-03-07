@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import styles from './PainelAdm.module.css';
 import { assertSupabase } from '../../lib/supabase';
-import { sendNewsletterEmail } from '../../lib/resend';
+import { sendNewsletterEmail } from '../../lib/sendEmail';
 
 const PainelAdm = () => {
   const [activeTab, setActiveTab] = useState('enviar');
@@ -104,14 +104,14 @@ const PainelAdm = () => {
     setEmailStatus(null);
 
     try {
-      const emails = subscribers.map(sub => sub.email);
-      await sendNewsletterEmail(emails, subject, message);
-      setEmailStatus({ type: 'success', message: `E-mail enviado com sucesso para ${emails.length} destinatario(s)!` });
+      const result = await sendNewsletterEmail(subject, message);
+      setEmailStatus({ type: 'success', message: `E-mail enviado com sucesso para ${result.successful} destinatario(s)!` });
       setSubject('');
       setMessage('');
-    } catch (error) {
-      console.error('Erro ao enviar email:', error);
-      setEmailStatus({ type: 'error', message: 'Erro ao enviar e-mail. Tente novamente.' });
+    } catch (err) {
+      console.error('Erro ao enviar email:', err);
+      const errorMessage = err.message || 'Erro ao enviar e-mail. Tente novamente.';
+      setEmailStatus({ type: 'error', message: errorMessage });
     } finally {
       setSendingEmail(false);
     }
