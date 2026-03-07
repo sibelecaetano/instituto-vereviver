@@ -1,3 +1,6 @@
+.logo img {
+  height: 42px;
+}
 .header {
   position: absolute;
   top: 0;

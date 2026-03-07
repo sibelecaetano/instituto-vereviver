@@ -7,7 +7,7 @@ export default function Topo() {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          Instituto
+          <img src="/logo-vereviver.png" alt="Instituto Ver e Viver" />
         </div>
 
         <nav className={styles.nav}>

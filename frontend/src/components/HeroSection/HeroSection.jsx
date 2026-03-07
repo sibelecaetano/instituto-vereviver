@@ -14,14 +14,16 @@ export default function HeroSection() {
       {/* Conteúdo */}
       <div className={styles.content}>
         <h1 className={styles.title}>
-          Instituto de
+          Instituto
           <span className={styles.highlight}>
-            Transformação Social
+            Ver & Viver
           </span>
         </h1>
 
         <p className={styles.subtitle}>
-          Construindo um futuro melhor através da educação, cultura e desenvolvimento social.
+          Levamos atendimento oftalmológico a comunidades que muitas vezes não
+          têm acesso ao cuidado visual. Nosso compromisso é levar saúde,
+          dignidade e qualidade de vida principalmente às populações rurais.
         </p>
 
         <div className={styles.buttons}>
@@ -30,7 +32,7 @@ export default function HeroSection() {
           </button>
 
           <button className={styles.secondaryButton}>
-            Conheça o Instituto
+            Conheça o Projeto
           </button>
         </div>
       </div>
