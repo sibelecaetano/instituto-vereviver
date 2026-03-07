@@ -16,10 +16,6 @@ export default function Topo() {
           <a href="#projetos">Projetos</a>
           <a href="#contato">Contato</a>
         </nav>
-
-        <button className={styles.cta}>
-          Apoie
-        </button>
       </div>
     </header>
   );

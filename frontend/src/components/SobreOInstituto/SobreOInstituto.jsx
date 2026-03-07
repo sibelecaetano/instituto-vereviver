@@ -8,6 +8,7 @@ const SobreOInstituto = () => {
     { icon: Users, number: '500+', label: 'Pessoas Beneficiadas' },
     { icon: FolderOpen, number: '20+', label: 'Projetos Realizados' },
     { icon: Calendar, number: '8', label: 'Anos de Atuação' },
+    { icon: Heart, number: '100%', label: 'Compromisso Social' },
   ];
 
   return (

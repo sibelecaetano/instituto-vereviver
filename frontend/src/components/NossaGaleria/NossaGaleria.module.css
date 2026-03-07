@@ -18,6 +18,10 @@
   font-size: 48px;
   margin-bottom: 16px;
 }
+.content p {
+  color: #475569;
+  line-height: 1.6;
+}
 
 .divider {
   width: 80px;

@@ -32,7 +32,7 @@ export default function HeroSection() {
           </button>
 
           <button className={styles.secondaryButton}>
-            Conheça o Projeto
+            Conheça o Instituto
           </button>
         </div>
       </div>
