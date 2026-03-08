@@ -40,10 +40,11 @@
 }
 
 .title {
-  font-size: 56px;
+  font-size: clamp(48px, 6vw, 72px);
   font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1px;
   margin-bottom: 24px;
-  color: white;
 }
 
 .highlight {
@@ -52,9 +53,11 @@
 }
 
 .subtitle {
+  max-width: 640px;
+  margin: 0 auto 40px auto;
   font-size: 20px;
-  margin-bottom: 40px;
-  color: #e2e8f0;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
 }
 
 .buttons {

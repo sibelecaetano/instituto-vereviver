@@ -21,10 +21,7 @@ export default function HeroSection() {
         </h1>
 
         <p className={styles.subtitle}>
-          Levamos atendimento oftalmológico a comunidades que muitas vezes não
-          têm acesso ao cuidado visual. Nosso compromisso é levar saúde,
-          dignidade e qualidade de vida principalmente às populações rurais.
-        </p>
+Levamos cuidado com a visão através de atendimentos oftalmológicos e iniciativas que transformam a forma de enxergar o mundo.        </p>
 
         <div className={styles.buttons}>
           <button className={styles.primaryButton}>
