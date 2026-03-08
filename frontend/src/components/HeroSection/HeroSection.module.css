@@ -12,7 +12,6 @@
 .background {
   position: absolute;
   inset: 0;
-  background-image: url("https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&h=1080&fit=crop");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -23,12 +22,12 @@
 .overlay {
   position: absolute;
   inset: 0;
+
   background: linear-gradient(
-    to bottom right,
-    rgba(15, 23, 42, 0.8),
-    rgba(6, 95, 70, 0.7)
+    135deg,
+    rgba(2,6,23,0.85),
+    rgba(16,185,129,0.55)
   );
-  z-index: 1;
 }
 
 /* ===== CONTEÚDO ===== */
@@ -40,10 +39,11 @@
 }
 
 .title {
-  font-size: 56px;
+  font-size: clamp(48px, 6vw, 72px);
   font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1px;
   margin-bottom: 24px;
-  color: white;
 }
 
 .highlight {
@@ -52,9 +52,11 @@
 }
 
 .subtitle {
+  max-width: 640px;
+  margin: 0 auto 40px auto;
   font-size: 20px;
-  margin-bottom: 40px;
-  color: #e2e8f0;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
 }
 
 .buttons {

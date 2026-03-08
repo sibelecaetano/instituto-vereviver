@@ -4,14 +4,14 @@ import styles from './Contato.module.css';
 
 const Contato = () => {
   const handleWhatsAppClick = () => {
-    const phoneNumber = '5511999999999'; 
+    const phoneNumber = '5585999832504'; 
     const message = 'Olá! Gostaria de mais informações sobre o instituto.'; 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
-    <section className={styles.container}>
+    <section id="contato" className={styles.container}>
       <div className={styles.contentWrapper}>
         <div className={styles.header}>
           <h2 className={styles.title}>Entre em Contato</h2>
@@ -27,7 +27,7 @@ const Contato = () => {
               <Phone size={24} />
             </div>
             <h3 className={styles.cardTitle}>Telefone</h3>
-            <p className={styles.cardText}>(11) 99999-9999</p>
+            <p className={styles.cardText}>(85) 9 9983-2504 </p>
           </div>
 
           <div className={styles.card}>
@@ -35,7 +35,7 @@ const Contato = () => {
               <Mail size={24} />
             </div>
             <h3 className={styles.cardTitle}>E-mail</h3>
-            <p className={styles.cardText}>contato@institutosocial.org.br</p>
+            <p className={styles.cardText}>projetosocialvereviver01@gmail.com</p>
           </div>
 
           <div className={styles.card}>

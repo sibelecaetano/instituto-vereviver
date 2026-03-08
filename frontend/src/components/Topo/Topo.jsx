@@ -1,26 +1,39 @@
 // Responsável: SC
-import styles from "./Topo.module.css";
-
+import { useEffect, useState } from "react"
+import styles from "./Topo.module.css"
+import logo from "../../assets/images/logo-vereviver.png"
 
 export default function Topo() {
+
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.container}>
+
         <div className={styles.logo}>
-          <img src="/logo-vereviver.png" alt="Instituto Ver e Viver" />
+          <img src={logo} alt="Instituto Ver & Viver"/>
         </div>
 
         <nav className={styles.nav}>
           <a href="#sobre">Sobre</a>
           <a href="#missao-visao-valores">Missão</a>
-          <a href="#projetos">Projetos</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#nossa-galeria">Galeria</a>
           <a href="#contato">Contato</a>
         </nav>
 
-        <button className={styles.cta}>
-          Apoie
-        </button>
       </div>
     </header>
-  );
+  )
 }
