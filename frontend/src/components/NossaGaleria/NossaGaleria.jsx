@@ -13,7 +13,7 @@ const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
 export default function NossaGaleria() {
   return (
-    <section className={styles.section}>
+    <section id="nossa-galeria" className={styles.section}>
       <div className={styles.container}>
 
         <div className={styles.header}>
