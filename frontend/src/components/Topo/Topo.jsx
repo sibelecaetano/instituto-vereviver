@@ -26,6 +26,7 @@ export default function Topo() {
         </div>
 
         <nav className={styles.nav}>
+          <a href="#sobre">Sobre</a>
           <a href="#missao-visao-valores">Missão</a>
           <a href="#servicos">Serviços</a>
           <a href="#nossa-galeria">Galeria</a>

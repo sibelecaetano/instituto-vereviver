@@ -11,7 +11,7 @@ const Contato = () => {
   };
 
   return (
-    <section className={styles.container}>
+    <section id="contato" className={styles.container}>
       <div className={styles.contentWrapper}>
         <div className={styles.header}>
           <h2 className={styles.title}>Entre em Contato</h2>

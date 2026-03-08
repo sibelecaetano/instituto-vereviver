@@ -4,18 +4,6 @@ import heroImage from "../../assets/images/hero.png"
 
 export default function HeroSection() {
 
-  const scrollToContato = () => {
-    document.querySelector("#contato")?.scrollIntoView({
-      behavior: "smooth"
-    })
-  }
-
-  const scrollToSobre = () => {
-    document.querySelector("#sobre")?.scrollIntoView({
-      behavior: "smooth"
-    })
-  }
-
   return (
     <section
       className={styles.hero}
@@ -40,19 +28,19 @@ export default function HeroSection() {
 
         <div className={styles.buttons}>
 
-          <button
+          <a
+            href="#contato"
             className={styles.primaryButton}
-            onClick={scrollToContato}
           >
             Entre em Contato
-          </button>
+          </a>
 
-          <button
+          <a
+            href="#sobre"
             className={styles.secondaryButton}
-            onClick={scrollToSobre}
           >
             Conheça o Instituto
-          </button>
+          </a>
 
         </div>
       </div>
