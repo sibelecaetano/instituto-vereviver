@@ -20,7 +20,7 @@ const Footer = () => {
               <h3 className={styles.logoTitle}>Instituto Ver&Viver</h3>
             </div>
             <p className={styles.bioText}>
-              Transformando vidas através da educação, cultura e desenvolvimento social.
+              Transformando vidas.
             </p>
           </div>
 
@@ -29,11 +29,11 @@ const Footer = () => {
             <div className={styles.contactList}>
               <div className={styles.contactItem}>
                 <Phone className={styles.contactIcon} size={18} />
-                <span>(11) 9999-9999</span>
+                <span>(85) 9 9983-2504</span>
               </div>
               <div className={styles.contactItem}>
                 <Mail className={styles.contactIcon} size={18} />
-                <span>contato@instituto.org.br</span>
+                <span>projetosocialvereviver01@gmail.com</span>
               </div>
             </div>
           </div>
