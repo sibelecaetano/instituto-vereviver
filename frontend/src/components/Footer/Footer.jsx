@@ -41,11 +41,11 @@ const Footer = () => {
           <div className={styles.column}>
             <h3 className={styles.columnTitle}>Links Rápidos</h3>
             <ul className={styles.linksList}>
-              <li><a href="/sobre" className={styles.link}>Sobre o Instituto</a></li>
-              <li><a href="/missao" className={styles.link}>Missão, Visão e Valores</a></li>
-              <li><a href="/projetos" className={styles.link}>Nossos Projetos</a></li>
-              <li><a href="/galeria" className={styles.link}>Galeria</a></li>
-              <li><a href="/contato" className={styles.link}>Contato</a></li>
+              <li><a href="#sobre" className={styles.link}>Sobre o Instituto</a></li>
+              <li><a href="#missao-visao-valores" className={styles.link}>Missão, Visão e Valores</a></li>
+              <li><a href="#servicos" className={styles.link}>Nossos Serviços</a></li>
+              <li><a href="#nossa-galeria" className={styles.link}>Galeria</a></li>
+              <li><a href="#contato" className={styles.link}>Contato</a></li>
               <li><a href="/login" className={styles.link}>Painel Administrativo</a></li>
             </ul>
           </div>
