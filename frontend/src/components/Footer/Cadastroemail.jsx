@@ -47,9 +47,9 @@ const Cadastroemail = () => {
 
   return (
     <div className={styles.newsletter}>
-      <h3 className={styles.title}>Receba nossas atualizacoes</h3>
+      <h3 className={styles.title}>Receba nossas atualizações</h3>
       <p className={styles.description}>
-        Inscreva-se para receber noticias e atualizacoes do instituto.
+        Inscreva-se para receber notícias e atualizações do instituto.
       </p>
       
       <form onSubmit={handleSubmit} className={styles.form}>
