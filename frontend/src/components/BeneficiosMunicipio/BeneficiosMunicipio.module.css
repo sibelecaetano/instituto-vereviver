@@ -1,0 +1,180 @@
+
+.section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f0fdfa 0%, #e6fffa 100%);
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.titleSection {
+  text-align: center;
+}
+
+.title {
+  color: var(--text);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: #04b12f;
+}
+
+.title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #0d9488;
+  margin: 16px auto 0;
+}
+
+.introSection {
+  text-align: center;
+}
+
+.introTitle {
+  color: #1a365d;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.partnershipTitle {
+  color: #04b12f;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+
+.benefitsList {
+  max-width: 700px;
+  width: 100%;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.list li {
+  color: #2d3748;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  padding: 16px 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.list li:hover {
+  transform: translateX(8px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.boldText {
+  color: #0d9488;
+  font-weight: 700;
+}
+
+.contactSection {
+  text-align: center;
+  padding: 40px 60px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.contactText {
+  color: #04b12f;
+  font-size: 1.25rem;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+
+.greenText {
+  color: #04b12f;
+}
+
+.boldGreenText {
+  color: #04b12f;
+  font-weight: 700;
+}
+
+.contactButton {
+  display: inline-block;
+  padding: 16px 48px;
+  background: linear-gradient(135deg, #019b0e 0%, #14b8a6 100%);
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contactButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(13, 148, 136, 0.4);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .introTitle {
+    font-size: 1.25rem;
+  }
+  
+  .list li {
+    font-size: 1rem;
+    padding: 14px 16px;
+  }
+  
+  .contactSection {
+    padding: 30px 20px;
+  }
+  
+  .contactText {
+    font-size: 1.1rem;
+  }
+  
+  .contactButton {
+    padding: 14px 36px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.75rem;
+  }
+  
+  .introTitle {
+    font-size: 1.1rem;
+  }
+  
+  .list li {
+    font-size: 0.95rem;
+  }
+}
+
+

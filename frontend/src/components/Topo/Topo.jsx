@@ -1,4 +1,3 @@
-// Responsável: SC
 import { useEffect, useState } from "react"
 import styles from "./Topo.module.css"
 import logo from "../../assets/images/logo-vereviver.png"
@@ -27,6 +26,7 @@ export default function Topo() {
 
         <nav className={styles.nav}>
           <a href="#sobre">Sobre</a>
+          <a href="#beneficios" className={styles.benefitsLink}>Benefícios</a>
           <a href="#missao-visao-valores">Missão</a>
           <a href="#servicos">Serviços</a>
           <a href="#nossa-galeria">Galeria</a>

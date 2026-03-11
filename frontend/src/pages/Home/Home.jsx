@@ -1,4 +1,5 @@
 import SobreOInstituto from '../../components/SobreOInstituto/SobreOInstituto';
+import BeneficiosMunicipio from '../../components/BeneficiosMunicipio/BeneficiosMunicipio';
 import MissaoVisaoValores from '../../components/MissaoVisaoValores/MissaoVisaoValores';
 import Servicos from '../../components/Servicos/Servicos';
 import NossaGaleria from '../../components/NossaGaleria/NossaGaleria';
@@ -10,6 +11,7 @@ export default function Home() {
     <>
       <HeroSection />
       <SobreOInstituto />
+      <BeneficiosMunicipio />
       <MissaoVisaoValores />
       <Servicos />
       <NossaGaleria />
