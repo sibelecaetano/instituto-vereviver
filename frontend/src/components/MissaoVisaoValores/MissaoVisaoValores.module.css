@@ -1,94 +1,98 @@
 .section {
-  padding: 120px 0;
-  background-color: #f1f5f9;
+  padding: 100px 24px;
+  background: #f8fafc;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 60px;
 }
 
-.header h2 {
-  font-size: 48px;
+.title {
+  font-size: 40px;
   font-weight: 700;
-  margin-bottom: 16px;
+  color: var(--text);
 }
 
 .divider {
-  width: 80px;
+  width: 60px;
   height: 4px;
-  background-color: var(--primary);
-  margin: 0 auto 20px auto;
+  background: var(--primary);
+  margin: 16px auto;
   border-radius: 4px;
 }
 
-.header p {
-  font-size: 18px;
-  color: var(--muted);
-  max-width: 650px;
+.subtitle {
+  max-width: 620px;
   margin: 0 auto;
-  line-height: 1.6;
+  color: #64748b;
+  font-size: 18px;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 32px;
 }
 
 .card {
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   background: white;
-  padding: 48px 40px;
-  border-radius: 20px;
-  transition: 0.3s ease;
+  padding: 40px 32px;
+  border-radius: 16px;
+  text-align: center;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
 }
-
-.card h3 {
-  font-size: 24px;
-  margin-bottom: 16px;
-}
-
-.card p {
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-/* ÍCONES */
 
 .icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 16px;
+  width: 70px;
+  height: 70px;
+
+  border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
+
+  margin: 0 auto 20px auto;
+
+  color: white;
 }
 
-/* Cores */
-
 .missao {
-  background: linear-gradient(to bottom right, #10b981, #059669);
+  background: #22c55e;
 }
 
 .visao {
-  background: linear-gradient(to bottom right, #3b82f6, #2563eb);
+  background: #3b82f6;
 }
 
 .valores {
-  background: linear-gradient(to bottom right, #a855f7, #ec4899);
+  background: #14b8a6;
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 14px;
+  color: var(--text);
+}
+
+.card p {
+  color: #475569;
+  line-height: 1.7;
+  font-size: 16px;
 }
 
 /* RESPONSIVO */
@@ -98,12 +102,7 @@
     grid-template-columns: 1fr;
   }
 
-  .section {
-    padding: 80px 0;
-  }
-
-  .header h2 {
-    font-size: 32px;
+  .card {
+    text-align: center;
   }
 }
-
