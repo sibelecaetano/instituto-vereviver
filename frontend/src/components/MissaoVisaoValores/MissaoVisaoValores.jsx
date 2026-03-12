@@ -1,72 +1,80 @@
 import styles from "./MissaoVisaoValores.module.css";
-import { Target, Eye, Sparkles } from "lucide-react";
+
+import missaoImg from "../../assets/images/missao.png";
+import visaoImg from "../../assets/images/visao.png";
+import valoresImg from "../../assets/images/valores.png";
 
 export default function MissaoVisaoValores() {
   return (
     <section id="missao-visao-valores" className={styles.section}>
       <div className={styles.container}>
-
         <div className={styles.header}>
-          <h2 className={styles.title}>Missão, Visão e Valores</h2>
+          <h2>Missão, Visão e Valores</h2>
           <div className={styles.divider}></div>
-          <p className={styles.subtitle}>
-            Os pilares que guiam nosso trabalho e nosso compromisso com a transformação social.
+          <p>
+            Os pilares que orientam nossas ações e fortalecem nosso compromisso
+            com a saúde visual e o impacto social.
           </p>
         </div>
 
         <div className={styles.grid}>
-
-          {/* MISSÃO */}
           <div className={styles.card}>
-            <div className={`${styles.icon} ${styles.missao}`}>
-              <Target size={40} />
+            <div className={styles.content}>
+              <h3>Missão</h3>
+              <div className={styles.line}></div>
+              <p>
+                Promover o <span>acesso à saúde ocular de qualidade</span>, levando
+                exames, diagnósticos e encaminhamentos especializados às comunidades,
+                com foco na <span>prevenção da cegueira evitável</span> e na
+                <span> melhoria da qualidade de vida</span> das pessoas.
+              </p>
             </div>
-
-            <h3>Missão</h3>
-
-            <p>
-              Promover o acesso à saúde ocular de qualidade, levando exames,
-              diagnósticos e encaminhamentos especializados às comunidades,
-              com foco na prevenção da cegueira evitável e na melhoria da
-              qualidade de vida das pessoas.
-            </p>
+            <div className={styles.image}>
+              <img src={missaoImg} alt="Missão Instituto Ver e Viver"/>
+            </div>
           </div>
 
-
-          {/* VISÃO */}
           <div className={styles.card}>
-            <div className={`${styles.icon} ${styles.visao}`}>
-              <Eye size={40} />
+            <div className={styles.content}>
+              <h3>Visão</h3>
+              <div className={styles.line}></div>
+              <p>
+                Ser reconhecido como um projeto que
+                <span> transforma parcerias em cuidado humano</span>,
+                levando <span>saúde visual e acolhimento</span> a quem mais
+                precisa, com <span>respeito, empatia e compromisso social</span>.
+              </p>
             </div>
-
-            <h3>Visão</h3>
-
-            <p>
-              Ser reconhecido como um projeto que transforma parcerias em
-              cuidado humano, levando saúde visual e acolhimento a quem
-              mais precisa, com respeito, empatia e compromisso social.
-            </p>
+            <div className={styles.image}>
+              <img src={visaoImg} alt="Visão Instituto Ver e Viver"/>
+            </div>
           </div>
 
-
-          {/* VALORES */}
           <div className={styles.card}>
-            <div className={`${styles.icon} ${styles.valores}`}>
-              <Sparkles size={40} />
+            <div className={styles.content}>
+              <h3>Valores</h3>
+              <div className={styles.line}></div>
+              <ul>
+                <li>
+                  <strong>Acessibilidade</strong>
+                  Garantir que todos tenham direito a um cuidado visual digno e de qualidade.
+                </li>
+                <li>
+                  <strong>Humanização</strong>
+                  Tratar cada paciente com respeito, empatia e acolhimento.
+                </li>
+                <li>
+                  <strong>Compromisso social</strong>
+                  Atuar em parceria com municípios, secretarias e profissionais
+                  para ampliar o alcance da saúde visual.
+                </li>
+              </ul>
             </div>
-
-            <h3>Valores</h3>
-
-            <p>
-              Acessibilidade, humanização, compromisso social, excelência,
-              prevenção, transparência e ética. Esses princípios orientam
-              todas as nossas ações e fortalecem nosso compromisso com o
-              cuidado visual e o impacto social.
-            </p>
+            <div className={styles.image}>
+              <img src={valoresImg} alt="Valores Instituto Ver e Viver"/>
+            </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );
