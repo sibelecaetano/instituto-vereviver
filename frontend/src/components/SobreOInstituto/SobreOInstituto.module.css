@@ -9,7 +9,9 @@
 .topSection{
   display:flex;
   align-items:center;
+  justify-content:center;
   gap:80px;
+  flex-wrap:wrap;
 }
 
 /* ===== IMAGEM ===== */
@@ -25,11 +27,11 @@
   width:100%;
   max-width:420px;
 
-  border-radius:20px;
+  border-radius:18px;
 
   object-fit:contain;
 
-  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  box-shadow:0 12px 30px rgba(0,0,0,0.05);
 }
 
 /* ===== TEXTO ===== */
@@ -41,28 +43,30 @@
   display:flex;
   flex-direction:column;
   gap:20px;
+
+  margin:0 auto; /* CENTRALIZA */
 }
 
 .subtitle{
   color:var(--primary);
 
-  font-size:0.95rem;
+  font-size:.9rem;
 
   font-weight:700;
 
   text-transform:uppercase;
 
-  letter-spacing:1px;
+  letter-spacing:1.2px;
 }
 
 .title{
   color:var(--text);
 
-  font-size:2.75rem;
+  font-size:2.6rem;
 
   font-weight:700;
 
-  line-height:1.2;
+  line-height:1.25;
 }
 
 .title::after{
@@ -99,7 +103,7 @@
 
   grid-template-columns:repeat(4,1fr);
 
-  gap:28px;
+  gap:24px;
 }
 
 .statCard{
@@ -107,7 +111,7 @@
 
   border-radius:16px;
 
-  padding:32px 20px;
+  padding:28px 20px;
 
   text-align:center;
 
@@ -115,18 +119,18 @@
   flex-direction:column;
   align-items:center;
 
-  gap:16px;
+  gap:14px;
 
   border:1px solid #e2e8f0;
 
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  box-shadow:0 6px 20px rgba(0,0,0,0.04);
 
-  transition:all .3s ease;
+  transition:transform .25s ease, box-shadow .25s ease;
 }
 
 .statCard:hover{
-  transform:translateY(-6px);
-  box-shadow:0 18px 45px rgba(0,0,0,0.08);
+  transform:translateY(-4px);
+  box-shadow:0 14px 30px rgba(0,0,0,0.06);
 }
 
 /* ICON */
@@ -134,8 +138,8 @@
 .iconWrapper{
   background:rgba(34,197,94,0.1);
 
-  width:56px;
-  height:56px;
+  width:52px;
+  height:52px;
 
   border-radius:50%;
 
@@ -151,7 +155,7 @@
 .statNumber{
   color:var(--text);
 
-  font-size:2.25rem;
+  font-size:2.1rem;
 
   font-weight:700;
 }
@@ -161,7 +165,7 @@
 .statLabel{
   color:var(--muted);
 
-  font-size:0.95rem;
+  font-size:.9rem;
 
   font-weight:600;
 }
@@ -187,6 +191,16 @@
   .topSection{
     flex-direction:column;
     text-align:center;
+  }
+
+  .textContainer{
+    align-items:center;
+    text-align:center;
+  }
+
+  .title::after{
+    margin-left:auto;
+    margin-right:auto;
   }
 
   .image{
@@ -216,7 +230,7 @@
   }
 
   .statCard{
-    padding:24px 16px;
+    padding:22px 16px;
   }
 
   .statNumber{
@@ -224,3 +238,4 @@
   }
 
 }
+
