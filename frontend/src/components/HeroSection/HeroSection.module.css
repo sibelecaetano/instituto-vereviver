@@ -1,235 +1,230 @@
-.hero {
-  position: relative;
-  min-height: 100svh;
-  width: 100%;
+/* ===== HERO ===== */
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hero{
+  position:relative;
+  min-height:100svh;
+  width:100%;
 
-  text-align: center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-  overflow: hidden;
+  text-align:center;
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  overflow:hidden;
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 }
 
-/* ===== OVERLAY ===== */
+/* ===== OVERLAY PADRONIZADO ===== */
 
-.overlay {
-  position: absolute;
-  inset: 0;
+.overlay{
+  position:absolute;
+  inset:0;
 
-  background: linear-gradient(
+  background:linear-gradient(
     135deg,
-    rgba(2,6,23,0.85),
-    rgba(16,185,129,0.55)
+    rgba(10,37,64,0.92) 0%,   /* azul principal do site */
+    rgba(34,197,94,0.55) 100% /* verde da marca */
   );
 
-  pointer-events: none;
-
-  z-index: 1;
+  z-index:1;
+  pointer-events:none;
 }
 
 /* ===== CONTEÚDO ===== */
 
-.content {
-  position: relative;
-  z-index: 3;
+.content{
+  position:relative;
+  z-index:3;
 
-  max-width: 900px;
+  max-width:900px;
 
-  padding: 0 24px;
+  padding:0 24px;
 
-  /* pequeno ajuste visual para ficar igual ao Figma */
-  margin-top: -40px;
+  margin-top:-40px;
 }
 
-.title {
-  font-family: "Poppins", sans-serif;
+.title{
+  font-size:clamp(48px,6vw,72px);
 
-  font-size: clamp(48px, 6vw, 72px);
+  font-weight:700;
 
-  font-weight: 700;
+  line-height:1.1;
 
-  line-height: 1.1;
+  letter-spacing:-0.5px;
 
-  letter-spacing: -0.5px;
+  margin-bottom:24px;
 
-  margin-bottom: 24px;
-
-  color: white;
+  color:white;
 }
 
-.highlight {
-  display: block;
-
-  color: inherit;
+.highlight{
+  display:block;
+  color:white;
 }
 
-.subtitle {
-  max-width: 640px;
+.subtitle{
+  max-width:640px;
 
-  margin: 0 auto 40px auto;
+  margin:0 auto 40px auto;
 
-  font-size: 20px;
+  font-size:20px;
 
-  line-height: 1.6;
+  line-height:1.6;
 
-  color: rgba(255,255,255,0.9);
+  color:rgba(255,255,255,0.9);
 }
 
-.buttons {
-  display: flex;
-
-  justify-content: center;
-
-  gap: 16px;
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:16px;
 }
 
 /* ===== BOTÕES ===== */
 
-.primaryButton {
-  padding: 16px 32px;
+.primaryButton{
+  padding:16px 32px;
 
-  background-color: var(--primary);
+  background:#22c55e;
 
-  color: white;
+  color:white;
 
-  border: none;
+  border:none;
 
-  border-radius: var(--radius);
+  border-radius:8px;
 
-  font-weight: 600;
+  font-weight:600;
 
-  font-size: 18px;
+  font-size:18px;
 
-  cursor: pointer;
+  cursor:pointer;
 
-  transition: all 0.3s ease;
+  transition:all .3s ease;
 
-  text-decoration: none;
+  text-decoration:none;
 }
 
-.primaryButton:hover {
-  background-color: var(--primary-hover);
-  transform: translateY(-2px);
+.primaryButton:hover{
+  background:#16a34a;
+  transform:translateY(-2px);
 }
 
-.secondaryButton {
-  padding: 16px 32px;
+.secondaryButton{
+  padding:16px 32px;
 
-  background-color: rgba(255, 255, 255, 0.08);
+  background:rgba(255,255,255,.08);
 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
 
-  color: white;
+  color:white;
 
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border:1px solid rgba(255,255,255,.3);
 
-  border-radius: var(--radius);
+  border-radius:8px;
 
-  font-weight: 600;
+  font-weight:600;
 
-  font-size: 18px;
+  font-size:18px;
 
-  cursor: pointer;
+  cursor:pointer;
 
-  transition: all 0.3s ease;
+  transition:all .3s ease;
 
-  text-decoration: none;
+  text-decoration:none;
 }
 
-.secondaryButton:hover {
-  background-color: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.6);
-  transform: translateY(-2px);
+.secondaryButton:hover{
+  background:rgba(255,255,255,.18);
+  border-color:rgba(255,255,255,.6);
+  transform:translateY(-2px);
 }
 
 /* ===== FADE INFERIOR ===== */
 
-.fade {
-  position: absolute;
+.fade{
+  position:absolute;
 
-  bottom: 0;
-  left: 0;
+  bottom:0;
+  left:0;
 
-  width: 100%;
-  height: 180px;
+  width:100%;
+  height:180px;
 
-  z-index: 2;
+  z-index:2;
 
-  pointer-events: none;
+  pointer-events:none;
 
-  background: linear-gradient(
+  background:linear-gradient(
     to bottom,
     rgba(255,255,255,0) 0%,
-    rgba(255,255,255,0.3) 60%,
+    rgba(255,255,255,0.4) 70%,
     rgba(255,255,255,1) 100%
   );
 }
 
 /* ===== SETA ===== */
 
-.arrow {
-  position: absolute;
+.arrow{
+  position:absolute;
 
-  bottom: 50px;
-  left: 50%;
+  bottom:50px;
+  left:50%;
 
-  transform: translateX(-50%);
+  transform:translateX(-50%);
 
-  z-index: 4;
+  z-index:4;
 
-  color: white;
+  color:white;
 
-  animation: float 2.8s ease-in-out infinite;
+  animation:float 2.8s ease-in-out infinite;
 
-  opacity: 0.8;
+  opacity:.8;
 
-  transition: opacity 0.3s ease;
+  transition:opacity .3s ease;
 
-  cursor: pointer;
+  cursor:pointer;
 }
 
-.arrow:hover {
-  opacity: 1;
+.arrow:hover{
+  opacity:1;
 }
 
-@keyframes float {
+@keyframes float{
 
-  0% { transform: translate(-50%, 0); }
+  0%{transform:translate(-50%,0)}
 
-  50% { transform: translate(-50%, 14px); }
+  50%{transform:translate(-50%,14px)}
 
-  100% { transform: translate(-50%, 0); }
+  100%{transform:translate(-50%,0)}
 
 }
 
 /* ===== RESPONSIVO ===== */
 
-@media (max-width: 768px) {
+@media (max-width:768px){
 
-  .title {
-    font-size: 36px;
+  .title{
+    font-size:36px;
   }
 
-  .subtitle {
-    font-size: 16px;
+  .subtitle{
+    font-size:16px;
   }
 
-  .buttons {
-    flex-direction: column;
-    align-items: center;
+  .buttons{
+    flex-direction:column;
+    align-items:center;
   }
 
   .primaryButton,
-  .secondaryButton {
-    width: 100%;
-    max-width: 320px;
+  .secondaryButton{
+    width:100%;
+    max-width:320px;
   }
 
 }

@@ -1,74 +1,83 @@
 .header{
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
+  position:fixed;
+  top:0;
+  width:100%;
 
-  padding: 18px 0;
+  z-index:1000;
 
-  transition: all 0.35s ease;
+  padding:18px 0;
+
+  transition:all .35s ease;
 }
 
 .container{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 28px;
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 28px;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 /* LOGO */
 
 .logo img{
-  height: 58px;
-  display: block;
+  height:58px;
+  display:block;
 
-  transition: transform 0.25s ease;
+  transition:transform .25s ease;
 }
 
 .logo img:hover{
-  transform: scale(1.04);
+  transform:scale(1.04);
 }
 
 /* MENU */
 
 .nav{
-  display: flex;
-  align-items: center;
-  gap: 34px;
+  display:flex;
+  align-items:center;
+  gap:34px;
 }
 
 .nav a{
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 500;
+  text-decoration:none;
 
-  color: white;
+  font-size:15px;
+  font-weight:500;
 
-  opacity: 0.9;
-  transition: all 0.25s ease;
+  color:white;
+
+  opacity:.9;
+
+  transition:all .25s ease;
 }
 
 .nav a:hover{
-  opacity: 1;
+  opacity:1;
+  color:var(--primary);
 }
-
 
 /* HEADER QUANDO SCROLL */
 
 .scrolled{
 
-  background: rgba(255,255,255,0.65);
+  background:rgba(255,255,255,0.85);
 
-  backdrop-filter: blur(14px);
+  backdrop-filter:blur(14px);
 
-  border-bottom: 1px solid rgba(0,0,0,0.04);
+  border-bottom:1px solid rgba(0,0,0,.06);
+
+  box-shadow:0 6px 20px rgba(0,0,0,.06);
 }
 
 .scrolled .nav a{
-  color: #1f2937;
+  color:var(--text);
+}
+
+.scrolled .nav a:hover{
+  color:var(--primary);
 }
 
 /* RESPONSIVO */
