@@ -47,9 +47,11 @@ export default function HeroSection() {
 
       <div className={styles.fade}></div>
 
-      <div className={styles.arrow}>
+      {/* SETA CLICÁVEL */}
+
+      <a href="#sobre" className={styles.arrow}>
         <ArrowDown size={36} strokeWidth={1.5}/>
-      </div>
+      </a>
 
     </section>
   )
