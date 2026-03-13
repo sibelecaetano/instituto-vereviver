@@ -1,15 +1,15 @@
-
-.section {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #f0fdfa 0%, #e6fffa 100%);
+.section{
+  padding:clamp(80px,8vw,140px) 0;
+  background:#f8fafc;
 }
-
 .contentWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
 }
+
+/* TITULO */
 
 .titleSection {
   text-align: center;
@@ -24,36 +24,40 @@
 }
 
 .highlight {
-  color: #04b12f;
+  color: var(--primary);
 }
 
 .title::after {
-  content: '';
+  content: "";
   display: block;
   width: 60px;
   height: 4px;
-  background-color: #0d9488;
+  background: var(--primary);
   margin: 16px auto 0;
+  border-radius: 3px;
 }
+
+/* INTRO */
 
 .introSection {
   text-align: center;
 }
 
 .introTitle {
-  color: #1a365d;
+  color: var(--text);
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
 }
 
 .partnershipTitle {
-  color: #04b12f;
+  color: var(--primary);
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
 }
 
+/* LISTA */
 
 .benefitsList {
   max-width: 700px;
@@ -64,99 +68,169 @@
   list-style: none;
   padding: 0;
   margin: 0;
+
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
+/* ITEM DA LISTA */
+
 .list li {
-  color: #2d3748;
-  font-size: 1.15rem;
+  position: relative;
+
+  color: var(--text);
+  font-size: 1.1rem;
   line-height: 1.6;
-  padding: 16px 20px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  padding: 18px 22px 18px 56px;
+
+  background: white;
+
+  border-radius: 14px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+/* BARRA LATERAL */
+
+.list li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 6px;
+  background: var(--primary);
+  border-radius: 14px 0 0 14px;
+}
+
+/* ÍCONE CHECK */
+
+.list li::before {
+  content: "✓";
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .list li:hover {
-  transform: translateX(8px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transform: translateX(6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
 }
 
 .boldText {
-  color: #0d9488;
+  color: var(--secondary);
   font-weight: 700;
 }
 
+/* CONTATO */
+
 .contactSection {
   text-align: center;
+
   padding: 40px 60px;
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  background: white;
+
+  border-radius: 22px;
+
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
 }
 
 .contactText {
-  color: #04b12f;
+  color: var(--primary);
   font-size: 1.25rem;
   margin: 0 0 24px;
   line-height: 1.5;
 }
 
 .greenText {
-  color: #04b12f;
+  color: var(--primary);
 }
 
 .boldGreenText {
-  color: #04b12f;
+  color: var(--primary);
   font-weight: 700;
 }
 
+/* BOTÃO */
+
 .contactButton {
   display: inline-block;
+
   padding: 16px 48px;
-  background: linear-gradient(135deg, #019b0e 0%, #14b8a6 100%);
+
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--secondary) 100%
+  );
+
   color: white;
   text-decoration: none;
-  font-size: 1.1rem;
+
+  font-size: 1.05rem;
   font-weight: 600;
+
   border-radius: 50px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .contactButton:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(13, 148, 136, 0.4);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.15);
 }
 
+/* RESPONSIVO */
+
 @media (max-width: 768px) {
+
   .section {
     padding: 60px 0;
   }
-  
+
   .title {
     font-size: 2rem;
   }
-  
+
   .introTitle {
     font-size: 1.25rem;
   }
-  
+
   .list li {
     font-size: 1rem;
-    padding: 14px 16px;
+    padding: 16px 18px 16px 52px;
   }
-  
+
   .contactSection {
     padding: 30px 20px;
   }
-  
+
   .contactText {
     font-size: 1.1rem;
   }
-  
+
   .contactButton {
     padding: 14px 36px;
     font-size: 1rem;
@@ -164,17 +238,17 @@
 }
 
 @media (max-width: 480px) {
+
   .title {
     font-size: 1.75rem;
   }
-  
+
   .introTitle {
     font-size: 1.1rem;
   }
-  
+
   .list li {
     font-size: 0.95rem;
   }
+
 }
-
-

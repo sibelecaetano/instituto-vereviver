@@ -1,48 +1,161 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-* { 
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-:root {
-  --background: #ffffff;
-  --text: #0f172a;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-  --primary: #10b981;
-  --primary-hover: #059669;
+/* RESET */
 
-  --secondary: rgba(255, 255, 255, 0.1);
-
-  --muted: #64748b;
-
-  --overlay: rgba(0, 0, 0, 0.6);
-
-  --radius: 8px;
-}
-body {
-font-family: 'Poppins', sans-serif;
-background-color: var(--background);
-color: var(--text);
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-.section {
-  padding: 120px 0;
-}
-.reveal {
-  opacity: 0;
-  transform: translateY(80px);
-  transition: opacity 1s ease, transform 1s ease;
+/* SISTEMA DE CORES DA MARCA */
+
+:root{
+
+  /* FUNDOS */
+
+  --background:#ffffff;
+  --surface-soft:#f0fdf4;     /* verde muito suave */
+  --surface-dark:#0f2744;     /* azul institucional */
+
+  /* TEXTO PRINCIPAL */
+
+  --text:#1f2937;
+
+  /* VERDE DO LOGO */
+
+  --primary:#22c55e;
+  --primary-hover:#16a34a;
+
+  /* AZUL DO LOGO */
+
+  --secondary:#2563eb;
+  --secondary-hover:#1d4ed8;
+
+  /* TEXTO SECUNDÁRIO */
+
+  --muted:#64748b;
+
+  /* BORDA */
+
+  --border:#e5e7eb;
+
+  /* OVERLAY */
+
+  --overlay:rgba(0,0,0,0.55);
+
+  /* RADIUS */
+
+  --radius:10px;
+
+  --dark-section:#0f2744;
+
 }
 
-.reveal-visible {
-  opacity: 1;
-  transform: translateY(0);
+/* BODY */
+
+body{
+  font-family:'Poppins',sans-serif;
+
+  background:var(--background);
+
+  color:var(--text);
+
+  line-height:1.6;
 }
-html {
-  scroll-behavior: smooth;
+
+/* CONTAINER GLOBAL */
+
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+/* SEÇÕES */
+
+.section{
+  padding:120px 0;
+}
+
+/* VARIAÇÕES DE FUNDO */
+
+.section-light{
+  background:var(--background);
+}
+
+.section-soft{
+  background:var(--surface-soft);
+}
+
+.section-dark{
+  background:var(--surface-dark);
+  color:white;
+}
+
+/* SCROLL REVEAL */
+
+.reveal{
+  opacity:0;
+  transform:translateY(80px);
+  transition:opacity 1s ease, transform 1s ease;
+}
+
+.reveal-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* LINKS */
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* BOTÕES */
+
+button{
+  font-family:inherit;
+  border:none;
+  cursor:pointer;
+  border-radius:var(--radius);
+  transition:.25s ease;
+}
+
+/* BOTÃO PRINCIPAL */
+
+.btn-primary{
+  background:var(--primary);
+  color:white;
+  padding:12px 24px;
+}
+
+.btn-primary:hover{
+  background:var(--primary-hover);
+}
+
+/* BOTÃO SECUNDÁRIO */
+
+.btn-secondary{
+  background:var(--secondary);
+  color:white;
+  padding:12px 24px;
+}
+
+.btn-secondary:hover{
+  background:var(--secondary-hover);
+}
+
+/* CARDS */
+
+.card{
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+}
+
+/* SCROLL SUAVE */
+
+html{
+  scroll-behavior:smooth;
 }
