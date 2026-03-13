@@ -7,22 +7,19 @@
 .container{
   max-width:1200px;
   margin:0 auto;
-  padding:0 24px;
+  padding:0 20px;
 }
 
 /* NEWSLETTER */
-
 .newsletterSection{
   margin-bottom:60px;
 }
 
 /* GRID */
-
 .columnsWrapper{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:60px;
-
+  gap:50px;
   padding-bottom:50px;
 }
 
@@ -33,7 +30,6 @@
 }
 
 /* LOGO */
-
 .logoSection{
   display:flex;
   align-items:center;
@@ -58,7 +54,6 @@
 }
 
 /* TITULOS */
-
 .columnTitle{
   font-size:1.2rem;
   font-weight:600;
@@ -66,7 +61,6 @@
 }
 
 /* CONTATO */
-
 .contactList{
   display:flex;
   flex-direction:column;
@@ -86,12 +80,10 @@
 }
 
 /* LINKS */
-
 .linksList{
   list-style:none;
   padding:0;
   margin:0;
-
   display:flex;
   flex-direction:column;
   gap:12px;
@@ -100,9 +92,7 @@
 .link{
   color:#cbd5e1;
   text-decoration:none;
-
   font-size:.9rem;
-
   transition:.25s;
 }
 
@@ -112,7 +102,6 @@
 }
 
 /* BOTTOM */
-
 .bottomBar{
   border-top:1px solid rgba(255,255,255,.08);
   padding:22px 0;
@@ -124,26 +113,30 @@
   font-size:.85rem;
 }
 
-/* RESPONSIVO */
 
+/* ---------------- RESPONSIVO ---------------- */
+
+/* tablet */
 @media (max-width:1024px){
 
   .columnsWrapper{
     grid-template-columns:repeat(2,1fr);
-  }
-
-  .column:last-child{
-    grid-column:span 2;
+    gap:40px;
   }
 
 }
 
+/* celular */
 @media (max-width:768px){
 
   .columnsWrapper{
     grid-template-columns:1fr;
+    gap:35px;
     text-align:center;
-    gap:40px;
+  }
+
+  .column{
+    align-items:center;
   }
 
   .logoSection{
@@ -156,6 +149,7 @@
 
   .contactItem{
     justify-content:center;
+    text-align:left;
   }
 
   .linksList{
