@@ -5,8 +5,8 @@ import Logo from '../../assets/images/logo-vereviver.png';
 
 const SobreOInstituto = () => {
   const statistics = [
-    { icon: Users, number: '+10.000', label: 'Pessoas Atendidas' },
-    { icon: FolderOpen, number: '+100', label: 'Parcerias Fechadas' },
+    { icon: Users, number: '+500.000', label: 'Pessoas Atendidas' },
+    { icon: FolderOpen, number: '+480', label: 'Cidades que receberam nossso atendimento' },
     { icon: Calendar, number: '8', label: 'Anos de Atuação' },
     { icon: Heart, number: '100%', label: 'Compromisso Social' },
   ];
